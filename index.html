@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM: O Ferreiro</title>
+    <style>
+        /* Estilo Geral */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f4e4bc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fffbf0;
+            border: 1px solid #d4c5a3;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 5px;
+        }
+
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #d35400; /* Laranja Fogo */
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            color: #d35400;
+            margin: 10px 0 5px 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .char-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 4px solid #5a3a22; /* Marrom Couro */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-top: 10px;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .stat-box {
+            background-color: #e8dcc5;
+            border: 1px solid #bba;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .stat-val {
+            font-size: 2em;
+            font-weight: bold;
+            color: #c0392b;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* Seções */
+        .section-title {
+            background-color: #d35400;
+            color: #fff;
+            padding: 5px 15px;
+            font-size: 1.2em;
+            margin-top: 30px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .attack-card {
+            background-color: #fff;
+            border-left: 6px solid #e67e22;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .ability-card {
+            background-color: #fff;
+            border-left: 6px solid #7f8c8d;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* Tracker */
+        .tracker-box {
+            background-color: #f6ddcc; /* Tom alaranjado leve */
+            border: 2px dashed #d35400;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media print {
+            body { background-color: white; }
+            .container { box-shadow: none; border: none; }
+            .tracker-box { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="Ferreiro.png" alt="O Ferreiro Sorridente" class="char-img">
+        
+        <h1>O Ferreiro Sorridente</h1>
+        <div class="quote">"Que martelo lindo... Quer experimentar o peso dele no seu crânio? Hihi."</div>
+        <p><strong>Tipo:</strong> Humano (Corrompido) | <strong>Encontro:</strong> Ato 2 (A Ferraria)</p>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span class="stat-label">Vida (PV)</span>
+            <span class="stat-val">45</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-label">Defesa (DEF)</span>
+            <span class="stat-val" style="color: #2980b9;">11</span>
+            <span style="font-size: 0.8em; color: #555;">(Robusto, mas lento)</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-label">Deslocamento</span>
+            <span class="stat-val" style="color: #333; font-size: 1.2em;">Normal</span>
+        </div>
+    </div>
+
+    <h2 class="section-title">🔨 Ações & Ataques</h2>
+    
+    <div class="attack-card">
+        <h3>Aço Quente (Martelada)</h3>
+        <p>Um golpe vertical pesado visando esmagar.</p>
+        <p style="font-size: 1.2em;">
+            <strong>Acerto:</strong> 1d20 + 5 <br> 
+            <strong>Dano:</strong> 1d8 + 3 (Contusão)
+        </p>
+    </div>
+
+    <h2 class="section-title">🛡️ Habilidades Passivas</h2>
+
+    <div class="ability-card">
+        <h3>🧱 Pés de Chumbo</h3>
+        <p>O Ferreiro é incrivelmente estável. Ele é <strong>imune a ser derrubado</strong> ou empurrado.</p>
+    </div>
+
+    <div class="ability-card" style="border-left-color: #c0392b;">
+        <h3>💢 Ponto Fraco: Imobilidade</h3>
+        <p>Se um jogador conseguir <strong>Agarrar</strong> o Ferreiro (Teste de Força), ele entra em pânico e perde a postura.</p>
+        <p><strong>Efeito:</strong> Enquanto estiver agarrado, a DEF dele cai para <strong>8</strong>.</p>
+    </div>
+
+    <div class="tracker-box">
+        <h3 style="margin-top: 0; color: #d35400;">📝 Rastreador de Combate (DM)</h3>
+        <p><em>Use para marcar o dano. (Total: 45 PV).</em></p>
+        
+        <div style="font-size: 1.2em; margin-top: 20px;">
+            <strong>Ferreiro:</strong> <input type="number" style="width: 70px; font-size: 1.2em; text-align: center;"> / 45 PV
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
